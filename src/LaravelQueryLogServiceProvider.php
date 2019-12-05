@@ -56,4 +56,14 @@ class LaravelQueryLogServiceProvider extends ServiceProvider
             ]
         );
     }
+
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register(): void
+    {
+        $this->mergeConfigFrom(__DIR__.'/query-log.php', 'query-log');
+    }
 }
