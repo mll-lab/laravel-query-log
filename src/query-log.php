@@ -18,10 +18,10 @@ return [
     | Log Channel
     |--------------------------------------------------------------------------
     |
-    | Configure a named log channel to use instead
+    | You may configure a named log channel to use instead
     | of the default logger.
     |
     */
 
-    'channel' => null,
+    'channel' => '',
 ];
