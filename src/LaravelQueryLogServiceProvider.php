@@ -37,8 +37,8 @@ class LaravelQueryLogServiceProvider extends ServiceProvider
             $databaseManager->listen(function (QueryExecuted $query) use ($channel): void {
                 $channel->debug(
                     $query->sql
-                    . ' ||| Values |||' . serialize($query->bindings)
-                    . ' ||| Duration ||| ' . $query->time
+                    .' ||| Values |||'.serialize($query->bindings)
+                    .' ||| Duration ||| '.$query->time
                 );
             });
         }
@@ -52,7 +52,7 @@ class LaravelQueryLogServiceProvider extends ServiceProvider
                 new StreamHandler(
                     $this->app->storagePath().'/logs/query.log',
                     Logger::DEBUG
-                )
+                ),
             ]
         );
     }
