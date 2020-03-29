@@ -6,6 +6,5 @@ enabled:
   - unalign_double_arrow
   - no_superfluous_phpdoc_tags
 disabled:
-  - align_double_arrow
   - align_phpdoc
   - phpdoc_align
