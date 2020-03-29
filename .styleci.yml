@@ -7,4 +7,3 @@ enabled:
   - no_superfluous_phpdoc_tags
 disabled:
   - align_phpdoc
-  - phpdoc_align
