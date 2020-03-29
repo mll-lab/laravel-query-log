@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MLL\LaravelQueryLog;
 
 use Illuminate\Contracts\Config\Repository as ConfigRepository;
@@ -16,10 +18,6 @@ class LaravelQueryLogServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      *
-     * @param  \Illuminate\Database\DatabaseManager  $databaseManager
-     * @param  \Illuminate\Log\LogManager  $logManager
-     * @param  \Illuminate\Contracts\Config\Repository  $configRepository
-     * @return void
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
     public function boot(DatabaseManager $databaseManager, LogManager $logManager, ConfigRepository $configRepository): void
@@ -59,8 +57,6 @@ class LaravelQueryLogServiceProvider extends ServiceProvider
 
     /**
      * Register any application services.
-     *
-     * @return void
      */
     public function register(): void
     {
