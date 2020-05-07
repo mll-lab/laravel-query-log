@@ -11,13 +11,13 @@
     }
   ],
   "require": {
-    "php": ">=7.1",
-    "illuminate/contracts": "5.5.*|5.6.*|5.7.*|5.8.*|^6.0"
+    "php": "^7.2",
+    "illuminate/contracts": "5.6.* || 5.7.* || 5.8.* || ^6.0 || ^7.0"
   },
   "require-dev": {
-    "orchestra/database": "3.5.*|3.6.*|3.7.*|3.8.*|3.9.*",
-    "orchestra/testbench": "3.5.*|3.6.*|3.7.*|3.8.*|3.9.*",
-    "nunomaduro/larastan": "^0.4.0"
+    "orchestra/database": "3.6.* || 3.7.* || 3.8.* || 3.9.* || ^4.0 || ^5.0",
+    "orchestra/testbench": "3.6.* || 3.7.* || 3.8.* || 3.9.* || ^4.0 || ^5.0",
+    "nunomaduro/larastan": "^0.4 || ^0.5"
   },
   "autoload": {
     "psr-4": {
@@ -28,10 +28,6 @@
     "psr-4": {
       "Tests\\": "tests/"
     }
-  },
-  "scripts": {
-    "test": "phpunit",
-    "stan": "phpstan analyse"
   },
   "extra": {
     "laravel": {
