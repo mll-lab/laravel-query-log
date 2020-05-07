@@ -21,6 +21,3 @@ All database queries are written to `storage/logs/query.log` by default.
 If you want to change the defaults, publish the configuration file:
 
     php artisan vendor:publish --provider="MLL\LaravelQueryLog\LaravelQueryLogServiceProvider" --tag=config
-
-# TODO https://github.com/addappio/laravel-query-log/blob/master/src/QueryLogServiceProvider.php
-# TODO https://github.com/BaymaxRice/laravel-query-log/blob/master/src/ServiceProvider.php
