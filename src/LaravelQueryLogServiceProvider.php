@@ -24,7 +24,7 @@ class LaravelQueryLogServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/query-log.php' => $this->app->make('path.config').'/query-log.php',
-        ], 'config');
+        ], 'query-log-config');
 
         if ($configRepository->get('query-log.enabled')) {
             $namedChannel = $configRepository->get('query-log.channel');

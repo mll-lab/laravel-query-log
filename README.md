@@ -14,10 +14,10 @@ Log database queries to an output channel of your choice.
     composer require mll-lab/laravel-query-log
 
 That's it. Laravel's package discovery will automatically kick in.
-All database queries are written to `storage/logs/query.log` by default.
 
 ## Configuration
 
-If you want to change the defaults, publish the configuration file:
+All database queries are written to `storage/logs/query.log` by default.
+If you want to change the location, publish the configuration file:
 
-    php artisan vendor:publish --provider="MLL\LaravelQueryLog\LaravelQueryLogServiceProvider" --tag=config
+    php artisan vendor:publish --tag=query-log-config
