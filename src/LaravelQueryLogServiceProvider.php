@@ -15,13 +15,11 @@ use Psr\Log\LoggerInterface;
 
 class LaravelQueryLogServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap any application services.
-     *
-     * @throws \Illuminate\Contracts\Container\BindingResolutionException
-     */
-    public function boot(DatabaseManager $databaseManager, LogManager $logManager, ConfigRepository $configRepository): void
-    {
+    public function boot(
+        DatabaseManager $databaseManager,
+        LogManager $logManager,
+        ConfigRepository $configRepository
+    ): void {
         $this->publishes([
             __DIR__.'/query-log.php' => $this->app->make('path.config').'/query-log.php',
         ], 'query-log-config');
@@ -55,9 +53,6 @@ class LaravelQueryLogServiceProvider extends ServiceProvider
         );
     }
 
-    /**
-     * Register any application services.
-     */
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/query-log.php', 'query-log');
