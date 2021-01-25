@@ -9,6 +9,9 @@ php:
 install:
 - composer install --prefer-dist --no-interaction --no-suggest
 
+before_script:
+- if [ $TRAVIS_PHP_VERSION = "8.0" ]; then pecl install pcov; fi
+
 script:
 - vendor/bin/phpstan analyse
 - vendor/bin/phpunit --coverage-clover=coverage.xml
