@@ -1,9 +1,13 @@
 {
   "name": "mll-lab/laravel-query-log",
   "description": "Log database queries to an output channel of your choice",
-  "type": "library",
-  "keywords": ["laravel", "php", "database"],
   "license": "MIT",
+  "type": "library",
+  "keywords": [
+    "laravel",
+    "php",
+    "database"
+  ],
   "authors": [
     {
       "name": "Benedikt Franke",
@@ -15,10 +19,11 @@
     "illuminate/contracts": "5.6.* || 5.7.* || 5.8.* || ^6 || ^7 || ^8 || ^9"
   },
   "require-dev": {
-    "orchestra/database": "3.6.* || 3.7.* || 3.8.* || 3.9.* || ^4 || ^5 || ^6 || ^7",
-    "orchestra/testbench": "3.6.* || 3.7.* || 3.8.* || 3.9.* || ^4 || ^5 || ^6",
+    "ergebnis/composer-normalize": "^2.26",
+    "mll-lab/php-cs-fixer-config": "^4.4",
     "nunomaduro/larastan": "^0.4 || ^0.5 || ^0.6 || ^1",
-    "mll-lab/php-cs-fixer-config": "^4.4"
+    "orchestra/database": "3.6.* || 3.7.* || 3.8.* || 3.9.* || ^4 || ^5 || ^6 || ^7",
+    "orchestra/testbench": "3.6.* || 3.7.* || 3.8.* || 3.9.* || ^4 || ^5 || ^6"
   },
   "autoload": {
     "psr-4": {
@@ -28,6 +33,11 @@
   "autoload-dev": {
     "psr-4": {
       "Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "ergebnis/composer-normalize": true
     }
   },
   "extra": {

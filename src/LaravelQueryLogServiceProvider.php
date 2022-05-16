@@ -24,16 +24,15 @@ class LaravelQueryLogServiceProvider extends ServiceProvider
 
         if ($configRepository->get('query-log.enabled')) {
             $namedChannel = $configRepository->get('query-log.channel');
+            assert(is_string($namedChannel) || is_null($namedChannel));
+
             $channel = $namedChannel
                 ? $logManager->channel($namedChannel)
                 : $this->createDefaultLogger();
 
             $databaseManager->listen(function (QueryExecuted $query) use ($channel): void {
-                $channel->debug(
-                    $query->sql
-                    . ' ||| Values |||' . serialize($query->bindings)
-                    . ' ||| Duration ||| ' . $query->time
-                );
+                $values = serialize($query->bindings);
+                $channel->debug("{$query->sql} ||| Values ||| {$values} ||| Duration ||| {$query->time}");
             });
         }
     }
