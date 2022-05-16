@@ -7,19 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-## 2.2.0
+## v2.3.0
+
+### Added
+
+- Support Laravel 9
+
+## v2.2.0
 
 ### Added
 
 - Support Laravel 8
 
-## 2.1.0
+## v2.1.0
 
 ### Changed
 
 - Use tag to publish config: `php artisan vendor:publish --tag=query-log-config`
 
-## 2.0.0
+## v2.0.0
 
 ### Added
 
@@ -29,7 +35,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Drop support for Laravel 5.5 and PHP 7.1
 
-## 1.0.0
+## v1.0.0
 
 ### Added
 

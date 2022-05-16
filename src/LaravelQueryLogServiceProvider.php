@@ -1,6 +1,4 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace MLL\LaravelQueryLog;
 
@@ -21,7 +19,7 @@ class LaravelQueryLogServiceProvider extends ServiceProvider
         ConfigRepository $configRepository
     ): void {
         $this->publishes([
-            __DIR__.'/query-log.php' => $this->app->make('path.config').'/query-log.php',
+            __DIR__ . '/query-log.php' => $this->app->make('path.config') . '/query-log.php',
         ], 'query-log-config');
 
         if ($configRepository->get('query-log.enabled')) {
@@ -33,8 +31,8 @@ class LaravelQueryLogServiceProvider extends ServiceProvider
             $databaseManager->listen(function (QueryExecuted $query) use ($channel): void {
                 $channel->debug(
                     $query->sql
-                    .' ||| Values |||'.serialize($query->bindings)
-                    .' ||| Duration ||| '.$query->time
+                    . ' ||| Values |||' . serialize($query->bindings)
+                    . ' ||| Duration ||| ' . $query->time
                 );
             });
         }
@@ -46,7 +44,7 @@ class LaravelQueryLogServiceProvider extends ServiceProvider
             'query-log',
             [
                 new StreamHandler(
-                    $this->app->storagePath().'/logs/query.log',
+                    $this->app->storagePath() . '/logs/query.log',
                     Logger::DEBUG
                 ),
             ]
@@ -55,6 +53,6 @@ class LaravelQueryLogServiceProvider extends ServiceProvider
 
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/query-log.php', 'query-log');
+        $this->mergeConfigFrom(__DIR__ . '/query-log.php', 'query-log');
     }
 }

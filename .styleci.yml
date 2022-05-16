@@ -1,9 +1,0 @@
-preset: laravel
-risky: true
-enabled:
-  - declare_strict_types
-  - dir_constant
-  - unalign_double_arrow
-  - no_superfluous_phpdoc_tags
-disabled:
-  - align_phpdoc
