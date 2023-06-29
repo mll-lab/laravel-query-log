@@ -1,3 +1,20 @@
+You can easily implement what this package does by adding something like this to `DatabaseServerProvider::boot()`:
+
+```php
+if (env('APP_DEBUG')) {
+    DB::listen(function (QueryExecuted $query): void {
+        $sql = str_replace("\n", ' ', $query->sql);
+        $bindings = \Safe\json_encode($query->bindings);
+
+        \Safe\file_put_contents(
+            filename: storage_path('logs/query.log'),
+            data: "SQL: {$sql} ||| Bindings: {$bindings} ||| Time: {$query->time}ms\n",
+            flags: FILE_APPEND,
+        );
+    });
+}
+```
+
 # laravel-query-log
 
 Log database queries to an output channel of your choice.
